@@ -24,7 +24,13 @@
     "test": "jest --config .jest.config.js",
     "test:ci": "yarn test --ci",
     "test:watch": "jest --config .jest.config.js --watch",
-    "webpack-defaults": "webpack-defaults"
+    "webpack-defaults": "webpack-defaults",
+    "docker:dev": "yarn docker:build && yarn docker:start",
+    "docker:build": "docker build -f docker/Dockerfile --target development -t uxd .",
+    "docker:start": "docker run --rm -it --network host -v $PWD:/usr/src/app uxd",
+    "docker:prod": "yarn docker:build:prod && yarn docker:start:prod",
+    "docker:build:prod": "docker build -f docker/Dockerfile --target production -t uxd:production .",
+    "docker:start:prod": "docker run --rm -it --network host -v $PWD:/usr/src/app uxd:production"
   },
   "dependencies": {
     "axios": "^0.18.0",
