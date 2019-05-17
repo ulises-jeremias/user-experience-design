@@ -38,7 +38,7 @@ El HTML semántico es la base de la accesibilidad en una aplicación web. Hacien
 A veces rompemos la semántica HTML cuando agregamos elementos `<div>` a nuestro JSX para hacer que nuestro código React funcione, especialmente cuando trabajamos con listas (`<ol>`, `<ul>` y `<dl>`) y la etiqueta `<table>` de HTML. En estos casos, deberíamos usar `Fragmentos React` para agrupar varios elementos.
 
 ```jsx
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
 
 function ListItem({ item }) {
   return (
@@ -46,7 +46,7 @@ function ListItem({ item }) {
       <dt>{item.term}</dt>
       <dd>{item.description}</dd>
     </Fragment>
-  );
+  )
 }
 
 function Glossary(props) {
@@ -56,7 +56,7 @@ function Glossary(props) {
         <ListItem item={item} key={item.id} />
       ))}
     </dl>
-  );
+  )
 }
 ```
 
@@ -74,7 +74,7 @@ function Glossary(props) {
         </Fragment>
       ))}
     </dl>
-  );
+  )
 }
 ```
 
@@ -87,7 +87,7 @@ function ListItem({ item }) {
       <dt>{item.term}</dt>
       <dd>{item.description}</dd>
     </>
-  );
+  )
 }
 ```
 
@@ -119,32 +119,32 @@ En el ejemplo siguiente esto no sucede dado solo puede funcionar bien para los u
 ```jsx
 class OuterClickExample extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { isOpen: false };
-    this.toggleContainer = React.createRef();
+    this.state = { isOpen: false }
+    this.toggleContainer = React.createRef()
 
-    this.onClickHandler = this.onClickHandler.bind(this);
-    this.onClickOutsideHandler = this.onClickOutsideHandler.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this)
+    this.onClickOutsideHandler = this.onClickOutsideHandler.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('click', this.onClickOutsideHandler);
+    window.addEventListener('click', this.onClickOutsideHandler)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('click', this.onClickOutsideHandler);
+    window.removeEventListener('click', this.onClickOutsideHandler)
   }
 
   onClickHandler() {
     this.setState(currentState => ({
       isOpen: !currentState.isOpen
-    }));
+    }))
   }
 
   onClickOutsideHandler(event) {
     if (this.state.isOpen && !this.toggleContainer.current.contains(event.target)) {
-      this.setState({ isOpen: false });
+      this.setState({ isOpen: false })
     }
   }
 
@@ -160,7 +160,7 @@ class OuterClickExample extends React.Component {
           </ul>
         ) : null}
       </div>
-    );
+    )
   }
 }
 ```
@@ -170,20 +170,20 @@ La misma funcionalidad se puede lograr utilizando un controlador de eventos apro
 ```jsx
 class BlurExample extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = { isOpen: false };
-    this.timeOutId = null;
+    this.state = { isOpen: false }
+    this.timeOutId = null
 
-    this.onClickHandler = this.onClickHandler.bind(this);
-    this.onBlurHandler = this.onBlurHandler.bind(this);
-    this.onFocusHandler = this.onFocusHandler.bind(this);
+    this.onClickHandler = this.onClickHandler.bind(this)
+    this.onBlurHandler = this.onBlurHandler.bind(this)
+    this.onFocusHandler = this.onFocusHandler.bind(this)
   }
 
   onClickHandler() {
     this.setState(currentState => ({
       isOpen: !currentState.isOpen
-    }));
+    }))
   }
 
   // Cerramos la ventana emergente en el siguiente tick usando setTimeout.
@@ -194,25 +194,25 @@ class BlurExample extends React.Component {
     this.timeOutId = setTimeout(() => {
       this.setState({
         isOpen: false
-      });
-    });
+      })
+    })
   }
 
   // Si un hijo recibe el foco, no cerrar la ventana emergente.
   onFocusHandler() {
-    clearTimeout(this.timeOutId);
+    clearTimeout(this.timeOutId)
   }
 
   render() {
     // React nos ayuda burbujeando los eventos de desenfoque
     // y enfoque hacia los padres.
     return (
-      <div onBlur={this.onBlurHandler}
-           onFocus={this.onFocusHandler}>
-
-        <button onClick={this.onClickHandler}
-                aria-haspopup="true"
-                aria-expanded={this.state.isOpen}>
+      <div onBlur={this.onBlurHandler} onFocus={this.onFocusHandler}>
+        <button
+          onClick={this.onClickHandler}
+          aria-haspopup="true"
+          aria-expanded={this.state.isOpen}
+        >
           Select an option
         </button>
         {this.state.isOpen ? (
@@ -223,10 +223,11 @@ class BlurExample extends React.Component {
           </ul>
         ) : null}
       </div>
-    );
+    )
   }
 }
 ```
+
 ## Herramientas de desarrollo 
 
 Hay una serie de herramientas que podemos utilizar para ayudar en la creación de aplicaciones web accesibles.
