@@ -5,12 +5,14 @@ import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader'
 import { I18n } from 'react-i18next'
 
+
 import 'src/styles/semantic-ui/semantic.less'
 import 'src/styles/custom/main.less'
 
 import store from 'src/store'
 import AppRoutes from 'src/routes/app'
 
+import 'leaflet-css'
 import 'src/i18n'
 
 const render = (Component) => {
