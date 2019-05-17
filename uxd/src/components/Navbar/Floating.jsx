@@ -52,8 +52,7 @@ const FloatingNavbar = props => {
           <Menu.Item>
             <Image size='mini' src={logo} />
           </Menu.Item>
-          <Menu.Item header>Project Name</Menu.Item>
-          <Menu.Item>Articles</Menu.Item>
+          <Menu.Item header>Desastres</Menu.Item>
 
           <Menu.Menu position='right'>
             <Menu.Item>
@@ -61,21 +60,13 @@ const FloatingNavbar = props => {
                 SOS
               </Button>
             </Menu.Item>
-            <Dropdown text='Dropdown' pointing className='link item'>
+            <Dropdown text='Información' pointing className='link item'>
               <Dropdown.Menu>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
+                <Dropdown.Item>Artículos</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Header>Header Item</Dropdown.Header>
-                <Dropdown.Item>
-                  <i className='dropdown icon' />
-                  <span className='text'>Submenu</span>
-                  <Dropdown.Menu>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
+                <Dropdown.Header>Informar</Dropdown.Header>
+                <Dropdown.Item>Areas Afectadas</Dropdown.Item>
+                <Dropdown.Item>Sectores de Evacuación</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Menu>

@@ -1,0 +1,3 @@
+import EvacuationSectorsContainer from './EvacuationSectorsContainer'
+
+export default EvacuationSectorsContainer
