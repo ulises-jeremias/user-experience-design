@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Divider, Header, Segment, Grid } from 'semantic-ui-react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet'
 import FloatingNavbar from 'src/components/Navbar/Floating'
 
 class HomeContainer extends Component {
@@ -12,25 +12,74 @@ class HomeContainer extends Component {
       map: {
         lat: -34.922922,
         lng: -57.923240,
-        zoom: 15,
+        zoom: 13,
       },
+      zones: [
+        {
+          title: 'Zone1',
+          color: 'red',
+          position: [-34.922922, -57.923240],
+          radius: 50,
+        },
+        {
+          title: 'Zone2',
+          color: 'blue',
+          position: [-34.899687, -57.956941],
+          radius: 50,
+        },
+      ],
+      notices: [
+        {
+          title: 'Lorem ipsum dolor sit',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus sit quod? Ratione quo recusandae sed repellat numquam veritatis sapiente voluptate corporis atque labore architecto repudiandae, non tempora eum reiciendis'
+        },
+        {
+          title: 'Lorem ipsum dolor sit',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus sit quod? Ratione quo recusandae sed repellat numquam veritatis sapiente voluptate corporis atque labore architecto repudiandae, non tempora eum reiciendis'
+        },
+        {
+          title: 'Lorem ipsum dolor sit',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus sit quod? Ratione quo recusandae sed repellat numquam veritatis sapiente voluptate corporis atque labore architecto repudiandae, non tempora eum reiciendis'
+        },
+      ],
       affectedAreas: [
         {
-          position: [-34.922922, -57.923240],
-          description: 'Hospital Policlínico',
+          position: [-34.931438, -57.941180],
+          description: (
+            <Header as='h3' color='red'>
+              Parque Saavedra
+              <Header.Subheader>
+                Test
+              </Header.Subheader>
+            </Header>
+          ),
         }
       ],
       evacuationSectors: [
         {
-          position: [-34.9205701, -57.9612306],
-          description: 'Parque Saavedra',
+          position: [-34.922922, -57.923240],
+          description: (
+            <Header as='h3'>
+              Hospital Policlínico
+              <Header.Subheader>
+                Principal sector de evacuación del sector 1
+              </Header.Subheader>
+            </Header>
+          ),
         }
       ],
     }
   }
 
   render() {
-    const { menuFixed, map, evacuationSectors, affectedAreas } = this.state
+    const {
+      menuFixed,
+      map,
+      zones,
+      evacuationSectors,
+      affectedAreas,
+      notices
+    } = this.state
 
     const position = [ map.lat, map.lng ]
 
@@ -77,12 +126,26 @@ class HomeContainer extends Component {
                       url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                     />
                     {evacuationSectors.map(({ position, description }, i) => (
-                      <Marker key={`evacuation-${i+1}`} position={position}>
+                      <Marker key={`evacuation-${i+1}`} position={position} alt={description}>
                         <Popup>
                           {description}
                         </Popup>
                       </Marker>
                     ))}
+                    {
+                      zones.map(({ title, color, position, radius }, i) => (
+                        <CircleMarker
+                          key={`zone-${i+1}`}
+                          center={position}
+                          radius={radius}
+                          color={color}
+                        >
+                          <Popup>
+                            {title}
+                          </Popup>
+                        </CircleMarker>
+                      ))
+                    }
                   </Map>
                 </Segment>
               </Grid.Row>
@@ -120,9 +183,19 @@ class HomeContainer extends Component {
               </Grid.Row>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment>
-                asd
-              </Segment>
+              <Segment.Group>
+                {
+                  notices.map(({title, description}, i) => (
+                    <Segment key={`notice-${i+1}`}>
+                      <Header as='h4'>
+                        {title}
+                      </Header>
+                      {description}
+                    </Segment>
+                  ))
+                }
+
+              </Segment.Group>
             </Grid.Column>
           </Grid>
         </Container>
