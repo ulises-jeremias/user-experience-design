@@ -51,7 +51,7 @@ const FloatingNavbar = props => {
       >
         <Container>
           <Menu.Item>
-            <Image size='mini' src={logo} />
+            <Image alt='logo' size='mini' src={logo} />
           </Menu.Item>
           <Menu.Item header as={Link} to='/'>Desastres</Menu.Item>
 
@@ -63,7 +63,7 @@ const FloatingNavbar = props => {
             </Menu.Item>
             <Dropdown text='Información' pointing className='link item'>
               <Dropdown.Menu>
-                <Dropdown.Item>Artículos</Dropdown.Item>
+                <Dropdown.Item as={Link} to='/articles'>Artículos</Dropdown.Item>
                 <Dropdown.Item as={Link} to='/contacts'>Contactos</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Header>Informar</Dropdown.Header>

@@ -94,9 +94,9 @@ class EvacuationSectorsContainer extends Component {
             ))}
           </Map>
 
-          <Header as='h5' textAlign='center' style={{ marginTop: '2px', marginBottom: '2px' }}>
+          <center style={{ marginTop: '2px', marginBottom: '2px' }}>
             Seleccione la dirección del sector de evacuación
-          </Header>
+          </center>
 
           <Divider hidden />
           

@@ -187,7 +187,7 @@ class HomeContainer extends Component {
                 {
                   notices.map(({title, description}, i) => (
                     <Segment key={`notice-${i+1}`}>
-                      <Header as='h4'>
+                      <Header as='h3'>
                         {title}
                       </Header>
                       {description}

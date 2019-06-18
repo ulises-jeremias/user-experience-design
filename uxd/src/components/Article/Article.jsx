@@ -34,7 +34,7 @@ class Article extends Component {
 
     return (
       <Fragment>
-        <Header as='h3'>
+        <Header as='h2'>
           {title}
         </Header>
         {

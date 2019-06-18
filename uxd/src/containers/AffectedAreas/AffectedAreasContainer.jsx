@@ -120,9 +120,9 @@ class AffectedAreasContainer extends Component {
             }
           </Map>
 
-          <Header as='h5' textAlign='center' style={{ marginTop: '2px', marginBottom: '2px' }}>
+          <center style={{ marginTop: '2px', marginBottom: '2px' }}>
             Seleccione la dirección del area afetada
-          </Header>
+          </center>
 
           <Divider hidden />
           
