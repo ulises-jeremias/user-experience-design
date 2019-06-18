@@ -10,7 +10,7 @@ const config = {
   output: {
     filename: 'bundle.js',
     path: commonPaths.outputServerPath,
-    publicPath: '/'
+    publicPath: '/user-experience-design/'
   },
   devtool: 'source-map',
   mode: 'production',
