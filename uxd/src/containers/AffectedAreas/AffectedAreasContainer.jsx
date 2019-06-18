@@ -72,8 +72,10 @@ class AffectedAreasContainer extends Component {
         <Container>
           <Form size='small'>
             <Form.Field width='4'>
-              <label htmlFor='reason'>Causa</label>
-              <input name='reason' placeholder='Ingrese una Causa...' />
+              <label htmlFor='reason'>
+                Causa
+                <input name='reason' id='reason' placeholder='Ingrese una Causa...' />
+              </label>
             </Form.Field>
           </Form>
 

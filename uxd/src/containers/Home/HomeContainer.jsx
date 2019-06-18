@@ -102,7 +102,7 @@ class HomeContainer extends Component {
         />
 
         <Container>
-          <Grid columns={2}>
+          <Grid columns={2} stackable doubling>
             <Grid.Column width={12}>
               <Grid.Row>
                 <Segment textAlign='center'>

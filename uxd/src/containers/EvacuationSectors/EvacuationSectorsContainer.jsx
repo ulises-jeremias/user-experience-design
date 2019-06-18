@@ -60,8 +60,10 @@ class EvacuationSectorsContainer extends Component {
         <Container>
           <Form size='small'>
             <Form.Field width='4'>
-              <label htmlFor='name'>Nombre del Sector de Evacuación</label>
-              <input name='name' placeholder='Ingrese un Nombre...' />
+              <label htmlFor='name'>
+                Nombre del Sector de Evacuación
+                <input name='name' id='name' placeholder='Ingrese un Nombre...' />
+              </label>
             </Form.Field>
           </Form>
 

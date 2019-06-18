@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Visibility,
   Container,
@@ -52,7 +53,7 @@ const FloatingNavbar = props => {
           <Menu.Item>
             <Image size='mini' src={logo} />
           </Menu.Item>
-          <Menu.Item header>Desastres</Menu.Item>
+          <Menu.Item header as={Link} to='/'>Desastres</Menu.Item>
 
           <Menu.Menu position='right'>
             <Menu.Item>
@@ -63,10 +64,11 @@ const FloatingNavbar = props => {
             <Dropdown text='Información' pointing className='link item'>
               <Dropdown.Menu>
                 <Dropdown.Item>Artículos</Dropdown.Item>
+                <Dropdown.Item as={Link} to='/contacts'>Contactos</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Header>Informar</Dropdown.Header>
-                <Dropdown.Item>Areas Afectadas</Dropdown.Item>
-                <Dropdown.Item>Sectores de Evacuación</Dropdown.Item>
+                <Dropdown.Item as={Link} to='/affected-areas'>Areas Afectadas</Dropdown.Item>
+                <Dropdown.Item as={Link} to='/evacuation-sectors'>Sectores de Evacuación</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Menu>
