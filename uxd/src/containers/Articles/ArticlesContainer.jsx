@@ -3,6 +3,8 @@ import { Container, Divider, Header, Grid, } from 'semantic-ui-react'
 import FloatingNavbar from 'src/components/Navbar/Floating'
 import Article from 'src/components/Article/Article'
 
+import logo from 'src-static/images/logo.png'
+
 class ArticlesContainer extends Component {
   constructor(props) {
     super(props)
@@ -63,6 +65,7 @@ class ArticlesContainer extends Component {
           stickTopMenu={() => this.setState({ menuFixed: true })}
           unStickTopMenu={() => this.setState({ menuFixed: false })}
           menuFixed={menuFixed}
+          logo={logo}
         />
 
         <Divider hidden />

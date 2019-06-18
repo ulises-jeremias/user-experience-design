@@ -3,6 +3,8 @@ import { Container, Divider, Header, Form, Button } from 'semantic-ui-react'
 import { Map, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet'
 import FloatingNavbar from 'src/components/Navbar/Floating'
 
+import logo from 'src-static/images/logo.png'
+
 class AffectedAreasContainer extends Component {
   constructor(props) {
     super(props)
@@ -65,6 +67,7 @@ class AffectedAreasContainer extends Component {
           stickTopMenu={() => this.setState({ menuFixed: true })}
           unStickTopMenu={() => this.setState({ menuFixed: false })}
           menuFixed={menuFixed}
+          logo={logo}
         />
 
         <Divider hidden />

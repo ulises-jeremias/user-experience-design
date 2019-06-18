@@ -50,14 +50,8 @@ const FloatingNavbar = props => {
         style={menuFixed ? fixedMenuStyle : menuStyle}
       >
         <Container>
-          <Menu.Item>
-            <Image alt='logo' size='mini' src={logo} />
-          </Menu.Item>
-          <Menu.Item header as={Link} to='/'>
-            Evacu
-            <span style={{color: '#0594d4'}}>
-              AR
-            </span>
+          <Menu.Item as={Link} to='/'>
+            <Image alt='logo' size='small' src={logo} />
           </Menu.Item>
 
           <Menu.Menu position='right'>
