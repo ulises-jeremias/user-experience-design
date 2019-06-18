@@ -36,7 +36,7 @@ class EvacuationSectorsContainer extends Component {
     const position = [ map.lat, map.lng ]
 
     return (
-      <div style={{ height: '100%', backgroundColor: '#f7f7f7' }}>
+      <div style={{ height: '100%' }}>
         <Container style={{ paddingTop: '2em' }}>
           <Header as='h1'>
             Informar sobre nuevo sector de evacuación
