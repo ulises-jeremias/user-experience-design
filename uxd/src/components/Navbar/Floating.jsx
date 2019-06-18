@@ -64,6 +64,7 @@ const FloatingNavbar = props => {
             <Dropdown text='Información' pointing className='link item'>
               <Dropdown.Menu>
                 <Dropdown.Item>Artículos</Dropdown.Item>
+                <Dropdown.Item as={Link} to='/contacts'>Contactos</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Header>Informar</Dropdown.Header>
                 <Dropdown.Item as={Link} to='/affected-areas'>Areas Afectadas</Dropdown.Item>
