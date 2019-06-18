@@ -30,7 +30,7 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <Router basename='/'>
+        <Router basename='/user-experience-design'>
           <I18n ns='translations'>
             {
               (t, { i18n }) => <Component trans={t} i18n={i18n} />
